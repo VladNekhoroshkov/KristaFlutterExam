@@ -49,13 +49,13 @@ class _CartState extends State<Cart> {
                                     subtitle: Text(_products.elementAt(index).subtitle),
                                     trailing: IconButton(
                                         icon: Icon(Icons.remove_shopping_cart),
-                                        //tooltip: 'Удалить товар из корзины',
+                                        tooltip: 'Удалить товар из корзины',
                                         onPressed: () {
                                             setState(() {
                                                 DataDumper.removeCart(_products.elementAt(index));
                                             });                                
                                         },
-                                        ),
+                                    ),
                                     onTap: () {
                                         Navigator.push(
                                             context, 
@@ -70,14 +70,25 @@ class _CartState extends State<Cart> {
                 ),
                 RaisedButton(
                     onPressed: () {}, 
-                    child: Text("Оформить заказ на сумму: " + 
-                        DataDumper.getCartPrice().toString() + 
-                        " ₽"), 
-                ),                 
+                    padding: const EdgeInsets.all(0.0),
+                    color: Colors.green,
+                    child: Container(              
+                        padding: const EdgeInsets.all(10.0),
+                        child:
+                            Text(
+                                "Оформить заказ на сумму: " + DataDumper.getCartPrice().toString() + " ₽", 
+                                style: TextStyle(fontSize: 20),
+                            ),
+                    ),
+                ),
+                
             ],                
-            )
+            )            
             : Center(
                 child: Text("Корзина пуста"),
-            ));
+            ),
+                               
+            
+        );
   }
 }

@@ -4,7 +4,7 @@ import 'dart:async';
 class API {
     static Future<http.Response> getProducts() async {
         var result = 
-            await http.get("https://5f7d7bd6834b5c0016b061bc.mockapi.io/products");
+            await http.get("https://6000366fcb21e10017af89d1.mockapi.io/products");
         
         if (result.statusCode == 200) {
             return result;

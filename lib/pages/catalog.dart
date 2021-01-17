@@ -79,7 +79,7 @@ class _CatalogState extends State<Catalog> {
                     subtitle: Text(_products.elementAt(index).subtitle),
                     trailing: IconButton(
                         icon: Icon(Icons.add_shopping_cart),
-                        //tooltip: 'Добавить товар в корзину',
+                        tooltip: 'Добавить товар в корзину',
 
                         onPressed: () {
                             setState(() {

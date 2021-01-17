@@ -16,28 +16,171 @@ class _ProfileState extends State<Profile> {
             title: Text("Профиль"),
         ),
         body: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(                
+            padding: const EdgeInsets.all(15),
+            child: Column(
                 children: [
-                    ListTile(
-                        leading: 
-                            CircleAvatar(
-                                radius: 30,
-                                backgroundImage: NetworkImage(
-                                    'https://img.favpng.com/8/21/18/computer-software-management-business-service-technical-support-png-favpng-GiV2VnJipVEsTBGxTEw8BBRaC.jpg'),
+                    CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(
+                            'https://bumper-stickers.ru/47340-thickbox_default/ulybaushhiysja-smayl.jpg'),
+                    ),
+                    Text('\n'),
+                    Table(
+                    border: TableBorder.all(color: Colors.green),
+                        children: [
+                            TableRow(children: [
+                            ListTile(                    
+                                title: 
+                                    Text(
+                                        "Ваш ID",
+                                        textAlign: TextAlign.center, 
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold, 
+                                            fontSize: 12,
+                                            color: Colors.black                                                                            
+                                        ),
+                                    ),
+                                subtitle: 
+                                    Text(
+                                        "27253149", 
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.green                                
+                                        ),
+                                    ),
                             ),
+                            ListTile(                    
+                                title: 
+                                    Text(
+                                        "Баллы",
+                                        textAlign: TextAlign.center, 
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold, 
+                                            fontSize: 12,
+                                            color: Colors.black                                
+                                        ),                                
+                                    ),
+                                subtitle: 
+                                    Text(
+                                        "12", 
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.green                                
+                                        ),
+                                    ),
+                            ),               
+                            ]),
+                        ],
+                    ),
+
+                    ListTile(                    
                         title: 
                             Text(
-                                "First name Second name", 
-                                style: TextStyle(fontSize: 18, )),
+                                "Эл. почта", 
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    fontSize: 16,
+                                    color: Colors.black),                                
+                            ),
                         subtitle: 
                             Text(
-                                "test@mail.com", 
-                                style: TextStyle(fontSize: 14, )),
-                    ),                   
+                                "ars_pro@bk.ru", 
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.green),
+                            ),
+                        onTap: () {},
+                    ),
+                    const Divider(
+                        color: Colors.green,
+                        height: 15,
+                        thickness: 1,
+                        indent: 15,
+                        endIndent: 15,
+                    ),
+
+                    ListTile(                    
+                        title: 
+                            Text(
+                                "Ваше имя", 
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    fontSize: 16,
+                                    color: Colors.black),
+                            ),
+                        subtitle: 
+                            Text(
+                                "Владислав",
+                                style: TextStyle(
+                                    fontSize: 16, 
+                                    color: Colors.green),
+                            ),
+                        onTap: () {},
+                    ),
+                    const Divider(
+                        color: Colors.green,
+                        height: 15,
+                        thickness: 1,
+                        indent: 15,
+                        endIndent: 15,
+                    ),
+
+                    ListTile(                    
+                        title: 
+                            Text(
+                                "Телефон для связи", 
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    fontSize: 16,
+                                    color: Colors.black),
+                            ),
+                        subtitle: 
+                            Text(
+                                "+7 (980) 749 75 72",
+                                style: TextStyle(
+                                    fontSize: 16, 
+                                    color: Colors.green), 
+                            ),
+                        onTap: () {},
+                    ),
+                    const Divider(
+                        color: Colors.green,
+                        height: 15,
+                        thickness: 1,
+                        indent: 15,
+                        endIndent: 15,
+                    ),
+                    ListTile(                    
+                        title: 
+                            Text(
+                                "Дата рождения", 
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    fontSize: 16,
+                                    color: Colors.black),
+                            ),
+                        subtitle: 
+                            Text(
+                                "22.10.1998",
+                                style: TextStyle(
+                                    fontSize: 16, 
+                                    color: Colors.green), 
+                            ),
+                        onTap: () {},
+                    ),
+
+                          
                 ],
             ),
+            
                 
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+            onPressed: (){}, 
+            label: Text("Выход"), 
+            backgroundColor: Colors.green
         ),
         
     );

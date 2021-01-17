@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Hello World',
       theme: ThemeData(
         brightness: Brightness.light,
-        accentColor: Colors.deepOrange,
-        primaryColor: Colors.cyanAccent,
-        //primarySwatch: Colors.pink,
+        accentColor: Colors.white,
+        primaryColor: Colors.green,
+
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage>{
     return Scaffold(
         body: IndexedStack(
             index: _currentIndex,
-            children: [Catalog(), Profile(), Cart()], 
+            children: [Catalog(), Cart(), Profile()], 
         ),
         bottomNavigationBar: BottomNavigationBar(
             onTap: (selectedIndex){
@@ -49,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage>{
             currentIndex: _currentIndex, 
             items: [
               BottomNavigationBarItem(icon: Icon(Icons.list), title: Text("Каталог")),
-              BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Профиль")),
-              BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text("Корзина"))
+              BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text("Корзина")),
+              BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Профиль"))
             ],
         ),
     );

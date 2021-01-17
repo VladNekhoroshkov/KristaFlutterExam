@@ -12,20 +12,20 @@ class DataDumper{
         List<ProductModel> models = List<ProductModel>();
 
         models.add(ProductModel(
-            "title 1", 
-            "subtitle 1", 
+            "test 1", 
+            "subtest 1", 
             10, 
-            "https://cdn.svyaznoy.ru/upload/iblock/84a/imac27_pf-screen.jpg"));
+            "https://bumper-stickers.ru/47340-thickbox_default/ulybaushhiysja-smayl.jpg"));
         models.add(ProductModel(
-            "title 2", 
-            "subtitle 2", 
-            15, 
-            "https://cdn.svyaznoy.ru/upload/iblock/84a/imac27_pf-screen.jpg"));
+            "test 2", 
+            "subtest 2", 
+            20, 
+            "https://bumper-stickers.ru/47340-thickbox_default/ulybaushhiysja-smayl.jpg"));
         models.add(ProductModel(
-            "title 3", 
-            "subtitle 3", 
-            48, 
-            "https://cdn.svyaznoy.ru/upload/iblock/84a/imac27_pf-screen.jpg"));
+            "test 3", 
+            "subtest 3", 
+            30, 
+            "https://bumper-stickers.ru/47340-thickbox_default/ulybaushhiysja-smayl.jpg"));
         
         return models;
     }
@@ -34,15 +34,11 @@ class DataDumper{
         var data = await API.getProducts();
 
         if (data != null ) {
-            //print(data);
-            //List<dynamic> jsonData = json.decode(utf8.decode(data.bodyBytes));
             List<dynamic> jsonData = jsonDecode(utf8.decode(data.bodyBytes));
             List<ProductModel> models = List<ProductModel>(); 
             jsonData.forEach((element) {
                 models.add(ProductModel.fromJson(element));
             });
-            //models = jsonData.map((model) => ProductModel.fromJson(model)).toList()
-            //    as List<ProductModel>;
             return models;
         }
         else {
@@ -64,11 +60,9 @@ class DataDumper{
 
     static getCartPrice () {
         var cost = 0.0;
-
         _inCart.forEach((element) {
             cost += element.price;
         });
-
         return cost;
     }
 }

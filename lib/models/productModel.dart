@@ -11,7 +11,7 @@ class ProductModel{
         jsonData['title'], 
         jsonData['subtitle'], 
         double.parse(jsonData['price']), 
-        "https://i.pinimg.com/736x/9f/f8/4c/9ff84cbbbf4950d61fb1fedd2e826ff9--good-morning-vase.jpg");
+        jsonData['imgUrl']);
   }
 
 }

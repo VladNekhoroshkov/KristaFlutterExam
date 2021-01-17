@@ -47,19 +47,17 @@ class _ProductState extends State<Product> {
                             Text(model.subtitle),
                         ],
                     ),                    
-                ),
-                Center(
-                    child: RaisedButton(
-                        padding: EdgeInsets.all(24),
-                        onPressed: () {
-                            setState(() {
-                                DataDumper.addCart(model);
-                            });
-                        }, 
-                        child: Text("Купить") 
-                    ),
                 ),                
             ],
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+            label: Text("Купить"), 
+            backgroundColor: Colors.green,
+            onPressed: () {
+                setState(() {
+                    DataDumper.addCart(model);
+                });
+            },
         ),  
     );
   }
