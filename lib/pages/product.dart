@@ -22,8 +22,10 @@ class _ProductState extends State<Product> {
         appBar: AppBar(
             title: Text(model.title)
         ),
-        body: Column(
+        body:         
+        Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
                 AspectRatio(
                     aspectRatio: 1,
@@ -34,6 +36,7 @@ class _ProductState extends State<Product> {
                 Padding(
                     padding: EdgeInsets.all(16),
                     child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                             Text(
@@ -47,18 +50,58 @@ class _ProductState extends State<Product> {
                             Text(model.subtitle),
                         ],
                     ),                    
-                ),                
+                ),
+                Padding(
+                    padding: EdgeInsets.all(16),
+                    
+                    child: Column(
+                        //width: double.infinity,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children:
+                            <Widget>[                                
+                                RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(44.0),
+                                        side: BorderSide(color: Colors.green)),                                
+                                    color: Colors.green,
+                                    textColor: Colors.white,
+                                    child: Container(
+                                        padding: EdgeInsets.all(11),
+                                        child: Text(
+                                            "Купить".toUpperCase(),
+                                            style: TextStyle(fontSize: 22)
+                                        ),
+                                    ),
+                                    onPressed: () {
+                                        setState(() {
+                                            DataDumper.addCart(model);
+                                        });
+                                    },
+                                )
+                            ],
+                                
+
+                    ),
+
+                ), 
+               
             ],
         ),
-        floatingActionButton: FloatingActionButton.extended(
-            label: Text("Купить"), 
-            backgroundColor: Colors.green,
-            onPressed: () {
-                setState(() {
-                    DataDumper.addCart(model);
-                });
-            },
-        ),  
+
+                
+
+        //floatingActionButton: FloatingActionButton.extended(
+        //    label: Text("Купить"), 
+        //    backgroundColor: Colors.green,
+        //    onPressed: () {
+        //        setState(() {
+        //            DataDumper.addCart(model);
+        //        });
+        //    },
+        //),
+
+          
     );
   }
 }
